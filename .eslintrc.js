@@ -13,23 +13,19 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['react', 'react-hooks', '@typescript-eslint', 'import', 'boundaries'],
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
+    ecmaFeatures: { jsx: true },
     ecmaVersion: 2020,
     sourceType: 'module',
   },
   settings: {
-    react: {
-      version: 'detect',
-    },
+    react: { version: 'detect' },
     'import/parsers': {
       '@typescript-eslint/parser': ['.ts', '.tsx'],
     },
     'import/resolver': {
       typescript: {
         alwaysTryTypes: true,
-        project: './tsconfig.json',
+        project: './tsconfig.json', // 👈 correct
       },
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
@@ -40,23 +36,23 @@ module.exports = {
         mode: 'full',
         type: 'features',
         capture: ['featureName'],
-        pattern: 'features/*/**/*',
+        pattern: 'src/features/*/**/*',
       },
       {
         type: 'shared',
-        pattern: 'shared/*/**/*',
+        pattern: 'src/shared/*/**/*',
       },
       {
         type: 'providers',
-        pattern: 'providers/*/**/*',
+        pattern: 'src/providers/*/**/*',
       },
       {
         type: 'config',
-        pattern: 'config/*/**/*',
+        pattern: 'src/config/*/**/*',
       },
       {
         type: 'navigation',
-        pattern: 'navigation/*/**/*',
+        pattern: 'src/navigation/*/**/*',
       },
     ],
     'boundaries/ignore': ['**/*.test.{js,jsx,ts,tsx}', '**/*.spec.{js,jsx,ts,tsx}'],
@@ -80,7 +76,6 @@ module.exports = {
         ],
       },
     ],
-
     'import/no-unresolved': 'error',
     'import/named': 'error',
     'import/namespace': 'error',
@@ -152,18 +147,13 @@ module.exports = {
         ],
         pathGroupsExcludedImportTypes: ['react', 'react-native'],
         'newlines-between': 'always',
-
         alphabetize: {
           order: 'asc',
           caseInsensitive: true,
         },
       },
     ],
-
-    // Prevent circular dependencies
     'import/no-cycle': 'error',
-
-    // Feature specific rules
     'no-restricted-imports': [
       'error',
       {
@@ -181,7 +171,6 @@ module.exports = {
     ],
   },
   overrides: [
-    // Override for navigation files which might need to import from features
     {
       files: ['src/navigation/**/*.{js,jsx,ts,tsx}'],
       rules: {

@@ -1,21 +1,21 @@
 {
   "extends": "@react-native/typescript-config/tsconfig.json",
   "compilerOptions": {
-    "baseUrl": "./src/",
+    "baseUrl": ".",
     "paths": {
-      "@src/*": ["*"],
-      "@config/*": ["config/*"],
-      "@providers/*": ["providers/*"],
-      "@navigation/*": ["navigation/*"],
-      "@features/*": ["features/*"],
-      "@shared/*": ["shared/*"],
-      "@assets/*": ["shared/assets/*"],
-      "@components/*": ["shared/components/*"],
-      "@hooks/*": ["shared/hooks/*"],
-      "@services/*": ["shared/services/*"],
-      "@store/*": ["shared/store/*"],
-      "@theme/*": ["shared/theme/*"],
-      "@utils/*": ["shared/utils/*"]
+      "@src/*": ["src/*"],
+      "@config/*": ["src/config/*"],
+      "@providers/*": ["src/providers/*"],
+      "@navigation/*": ["src/navigation/*"],
+      "@features/*": ["src/features/*"],
+      "@shared/*": ["src/shared/*"],
+      "@assets/*": ["src/shared/assets/*"],
+      "@components/*": ["src/shared/components/*"],
+      "@hooks/*": ["src/shared/hooks/*"],
+      "@services/*": ["src/shared/services/*"],
+      "@store/*": ["src/shared/store/*"],
+      "@theme/*": ["src/shared/theme/*"],
+      "@utils/*": ["src/shared/utils/*"]
     }
   }
 }
